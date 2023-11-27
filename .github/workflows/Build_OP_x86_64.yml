@@ -108,7 +108,7 @@ jobs:
         #path: openwrt/bin
 
     - name: Unzip artifact
-      run: unzip openwrt/bin/openwrt.zip -d openwrt/bin/unzipped
+      run: unzip openwrt/bin/OpenWrt.zip -d openwrt/bin/unzipped
 
     - name: Upload specific OpenWrt images
       uses: actions/upload-artifact@master
