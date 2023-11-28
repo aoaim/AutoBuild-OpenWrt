@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_x86_64
+name: Build
 
 # Add a button to trigger the workflow
 on: 
@@ -101,27 +101,24 @@ jobs:
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
-    #- name : Upload artifact
-      #uses: actions/upload-artifact@master
-      #with:
-        #name: OpenWrt
-        #path: openwrt/bin
-
-    #- name: Unzip artifact
-      #run: unzip openwrt/bin/OpenWrt.zip -d openwrt/bin/unzipped
-
-    - name: Upload specific artifact
+    - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: |
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.img.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.qcow2.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.vmdk.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-rootfs.img.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-kernel.bin
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.qcow2
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.vmdk
-          openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-rootfs.img.gz
+        path: openwrt/bin
+
+    #- name: Upload specific artifact
+      #uses: actions/upload-artifact@master
+      #with:
+        #name: OpenWrt
+        #path: |
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.img.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.qcow2.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-combined-efi.vmdk.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-ext4-rootfs.img.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-kernel.bin
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.qcow2
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.vmdk
+          #openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-rootfs.img.gz
